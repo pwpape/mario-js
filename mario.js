@@ -11,7 +11,7 @@ function drawPyramid(height) {
 
     // TODO 2
     // delete the "under construction" element, ie the <div id="notice">
-
+    let insides = "";
 
     // for each row....
     for (var row = 0; row < height; row++) {
@@ -35,6 +35,12 @@ function drawPyramid(height) {
         // TODO 1
         // create an element whose inner text is rowStr,
         // and insert it as a child of the container <div id="pyramid">
-
+        let pTag = document.createElement("p");
+        //let pText = document.createTextNode(rowStr);
+        //pTag.appendChild(pText);
+        pTag.innerText = rowStr;
+        let div = document.getElementById("pyramid");
+        div.appendChild(pTag);
     }
 }
+
