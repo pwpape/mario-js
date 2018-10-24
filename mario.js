@@ -12,6 +12,8 @@ function drawPyramid(height) {
     // TODO 2
     // delete the "under construction" element, ie the <div id="notice">
     let insides = "";
+    let construction = document.getElementById("construction");
+    construction.parentNode.removeChild(construction);
 
     // for each row....
     for (var row = 0; row < height; row++) {
