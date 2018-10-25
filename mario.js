@@ -7,29 +7,35 @@
  */
 function determineHeightAndThenDrawPyramid() {
 
+    let pyramid = document.getElementById("pyramid");
+    while (pyramid.firstChild) 
+    { 
+        pyramid.removeChild(pyramid.firstChild);
+    }
     // just so we know we're here
     console.log("someone invoked the determineHeightAndThenDrawPyramid function!");
 
     // TODO 3
     // figure out the height the user typed (replace the "5" below)
-    heightStr = "5";
+    heightStr = document.getElementById("height");
 
     // here we convert the string to an int
-    height = parseInt(heightStr);
+    let height = parseInt(heightStr.value);
+
 
     // TODO 2
     // draw the pyramid with the given height
-
+    drawPyramid(height);
 }
 
 
 // TODO 1
 // hook up the button's click event to our determineHeightAndThenDrawPyramid function
 
+let button = document.getElementById("ourButton");
+button.addEventListener("click", determineHeightAndThenDrawPyramid);
 
-
-/**
- * drawPyramid
+ /* drawPyramid
  *
  * Renders, in the HTML document, a Mario pyramid of the specified height
  */
